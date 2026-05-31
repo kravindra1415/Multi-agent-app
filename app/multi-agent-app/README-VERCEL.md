@@ -5,7 +5,9 @@ This project is a Vite + React app with serverless API functions under api/. Fol
 1. Create a GitHub repo and push this project.
 2. On Vercel, click "Import Project" and connect the GitHub repo.
 3. In the Project > Settings > Environment Variables, add:
-   - GROQ_API_KEY — your Groq API key (do NOT use VITE_ prefix)
+   - GROQ_API_KEY — your Groq key (do NOT use VITE_ prefix)
+   - SUPABASE_URL — your Supabase project URL (optional)
+   - SUPABASE_SERVICE_ROLE_KEY — your Supabase service role key (optional)
 4. Deploy. Vercel will run `npm run build` and deploy the static site in dist, and expose your serverless functions under /api/*.
 
 Local testing:
@@ -22,14 +24,24 @@ vercel login
 vercel dev
 
 Security notes:
-- Ensure you do not commit .env. This project adds .env to .gitignore.
-- Store GROQ_API_KEY in Vercel Environment Variables; do not expose it to the browser.
+- Ensure you do not commit .env. This project ignores .env in .gitignore.
+- Store `GROQ_API_KEY` and Supabase secrets in Vercel Environment Variables only.
+
+GitHub Actions auto-deploy
+
+This project includes a GitHub Actions workflow at `.github/workflows/vercel-deploy.yml`.
+On every push to `main`, the workflow installs dependencies, builds the app, and deploys to Vercel.
+
+To enable it, add these GitHub repository secrets:
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
 
 One-click deploy
 
-You can add a one-click deploy button to this README. Replace `OWNER/REPO` with your GitHub repository path.
+Your GitHub repo is `kravindra1415/Multi-agent-app`.
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/OWNER/REPO)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/kravindra1415/Multi-agent-app)
 
 Supabase persistent memory (optional)
 
