@@ -31,8 +31,8 @@ If you import this repo from the GitHub root, Vercel will use the root `vercel.j
 
 GitHub Actions auto-deploy
 
-This project includes a GitHub Actions workflow at `.github/workflows/vercel-deploy.yml`.
-On every push to `main`, the workflow installs dependencies, builds the app, and deploys to Vercel.
+This project includes a GitHub Actions workflow at the repository root in `.github/workflows/vercel-deploy.yml`.
+On every push to `main`, the workflow installs dependencies in `app/multi-agent-app`, builds the app, and deploys to Vercel.
 
 To enable it, add these GitHub repository secrets:
 - `VERCEL_TOKEN`

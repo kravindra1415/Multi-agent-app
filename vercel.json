@@ -5,7 +5,7 @@
             "src": "app/multi-agent-app/package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "app/multi-agent-app/dist"
+                "distDir": "dist"
             }
         },
         {
