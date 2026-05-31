@@ -2,10 +2,10 @@
     "version": 2,
     "builds": [
         {
-            "src": "app/multi-agent-app/package.json",
+            "src": "package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "dist"
+                "distDir": "app/multi-agent-app/dist"
             }
         },
         {
