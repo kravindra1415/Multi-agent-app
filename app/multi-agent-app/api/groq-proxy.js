@@ -8,7 +8,11 @@ export default async function handler(req, res) {
         return res.status(204).end()
     }
 
-    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    if (req.method === 'GET') {
+        return res.status(200).json({ ok: true, info: 'groq-proxy endpoint. Use POST to forward requests to Groq.' })
+    }
+
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed', method: req.method })
 
     try {
         const body = req.body
