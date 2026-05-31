@@ -27,6 +27,8 @@ Security notes:
 - Ensure you do not commit .env. This project ignores .env in .gitignore.
 - Store `GROQ_API_KEY` and Supabase secrets in Vercel Environment Variables only.
 
+If you import this repo from the GitHub root, Vercel will use the root `vercel.json` file and build the nested app in `app/multi-agent-app`.
+
 GitHub Actions auto-deploy
 
 This project includes a GitHub Actions workflow at `.github/workflows/vercel-deploy.yml`.
