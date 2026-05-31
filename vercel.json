@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "outputDirectory": "app/multi-agent-app/dist",
     "builds": [
         {
             "src": "package.json",
